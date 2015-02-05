@@ -12,7 +12,7 @@ PASSWORD = 'default'
 
 # create our application
 app = Flask(__name__)
-app.config.from_envvar('FLASKR_SETTINGS', silent=True)
+app.config.from_object(__name__)
 
 def connect_db():
     return sqlite3.connect(app.config['DATABASE'])
